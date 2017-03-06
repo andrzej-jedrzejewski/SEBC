@@ -54,8 +54,31 @@
   echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
   echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
   ```
+  To verify on each host:
   ```
   [root@ip-10-0-0-206 ec2-user]# cat /sys/kernel/mm/transparent_hugepage/defrag
   always madvise [never]
   ```
+5. List your network interface configuration???
+
+6. a) Forward DNS lookup
+      ```
+      root@ip-10-0-0-206 ec2-user]# nslookup ip-10-0-0-206.eu-west-1.compute.internal
+      Server:   10.0.0.2
+      Address:  10.0.0.2#53
+
+      Non-authoritative answer:
+      Name: ip-10-0-0-206.eu-west-1.compute.internal
+      Address: 10.0.0.206
+      ```
+    b) Reverse DNS lookup
+      ```
+      root@ip-10-0-0-206 ec2-user]# nslookup 10.0.0.206
+      Server:   10.0.0.2
+      Address:  10.0.0.2#53
+      Non-authoritative answer:
+      206.0.0.10.in-addr.arpa name = ip-10-0-0-206.eu-west-1.compute.internal.
+      ```
+
+
 
