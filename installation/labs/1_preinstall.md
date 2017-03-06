@@ -1,4 +1,4 @@
-To change swappiness option we can use:
+1. To change swappiness option we can use:
 
 ```
 sysctl vm.swappiness=1
@@ -10,7 +10,7 @@ To verify on each host:
 vm.swappiness=1
 ```
 
-mount attribute output:
+2. mount attribute output:
 ```
 [root@ip-10-0-0-206 ec2-user]# mount
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
@@ -45,3 +45,17 @@ tmpfs on /run/user/995 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=149731
 tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=1497312k,mode=700,uid=1000,gid=1000)
 cm_processes on /run/cloudera-scm-agent/process type tmpfs (rw,relatime,seclabel,mode=751)
 ```
+
+3. There is only one physical/logical volume (root )
+
+4. Disabling Transparent Hugepage Compaction
+
+```
+echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
+echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
+```
+```
+[root@ip-10-0-0-206 ec2-user]# cat /sys/kernel/mm/transparent_hugepage/defrag
+always madvise [never]
+```
+
