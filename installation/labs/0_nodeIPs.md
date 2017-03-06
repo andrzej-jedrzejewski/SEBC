@@ -6,5 +6,6 @@
 | 10.0.0.173  | ip-10-0-0-173.eu-west-1.compute.internal  |   DN2,ZK  |
 | 10.0.0.93   |  ip-10-0-0-93.eu-west-1.compute.internal  |   DN3     |
 
+[[https://github.com/andrzej-jedrzejewski/SEBC/blob/master/installation/png/aws_nodes.png|alt=aws_nodes]]
 
 
