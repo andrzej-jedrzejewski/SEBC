@@ -79,6 +79,27 @@
       Non-authoritative answer:
       206.0.0.10.in-addr.arpa name = ip-10-0-0-206.eu-west-1.compute.internal.
       ```
+7. Status of nscd:
+   ```
+   [root@ip-10-0-0-206 ec2-user]# systemctl status nscd
+    ● nscd.service - Name Service Cache Daemon
+    Loaded: loaded (/usr/lib/systemd/system/nscd.service; enabled; vendor preset: disabled)
+    <b>Active: active (running)<b> since Mon 2017-03-06 19:34:33 UTC; 2h 39min ago
+    Main PID: 18350 (nscd)
+    CGroup: /system.slice/nscd.service
+           └─18350 /usr/sbin/nscd
+    ```
+    
+8. Status of ntp:
+    ```
+   [root@ip-10-0-0-206 ec2-user]# systemctl status ntpd
+    ● ntpd.service - Network Time Service
+    Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
+    <b>Active: active (running)<b> since Mon 2017-03-06 19:34:33 UTC; 2h 40min ago
+    Main PID: 18306 (ntpd)
+    CGroup: /system.slice/ntpd.service
+           └─18306 /usr/sbin/ntpd -u ntp:ntp -g
+   ```
 
 
 
