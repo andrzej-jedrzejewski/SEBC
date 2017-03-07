@@ -46,35 +46,35 @@
   cm_processes on /run/cloudera-scm-agent/process type tmpfs (rw,relatime,seclabel,mode=751)
   ```
 
-3. Show the reserve space of any non-root, ext-based volumes: 
-  ```
+3. Show the reserve space of any non-root, ext-based volumes:
+    ```
     There is only one physical/logical volume (root) - Saving my $$$ :)
-  ```
+    ```
 4. Disabling Transparent Hugepage Compaction
 
-  ```
-    if [ -f /sys/kernel/mm/redhat_transparent_hugepage/defrag ];
-  then
-    echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag
-    echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag' >> /etc/rc.local
-  else
-    echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
-    echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
-  fi
-  if [ -f /sys/kernel/mm/redhat_transparent_hugepage/enabled ];
-  then
-    echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled
-    echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled' >> /etc/rc.local
-  else
-    echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
-    echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
-  fi
-  ```
-  To verify on each host:
-  ```
-  [root@ip-10-0-0-206 ec2-user]# cat /sys/kernel/mm/transparent_hugepage/defrag
-  always madvise [never]
-  ```
+    ```
+      if [ -f /sys/kernel/mm/redhat_transparent_hugepage/defrag ];
+    then
+      echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag
+      echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag' >> /etc/rc.local
+    else
+      echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
+      echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
+    fi
+    if [ -f /sys/kernel/mm/redhat_transparent_hugepage/enabled ];
+    then
+      echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled
+      echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled' >> /etc/rc.local
+    else
+      echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
+      echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
+    fi
+    ```
+    To verify on each host:
+    ```
+    [root@ip-10-0-0-206 ec2-user]# cat /sys/kernel/mm/transparent_hugepage/defrag
+    always madvise [never]
+    ```
 5. List your network interface configuration
     ```
     [root@ip-10-0-0-206 ec2-user]# ifconfig
@@ -95,7 +95,7 @@
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 2600057  bytes 4659527583 (4.3 GiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-    ``
+    ```
 
 6. a) Forward DNS lookup
       ```
