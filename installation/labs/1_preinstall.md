@@ -101,5 +101,6 @@
            └─18306 /usr/sbin/ntpd -u ntp:ntp -g
    ```
 
-
+9. Host inspector screen shot:
+   ![AWS Nodes](https://github.com/andrzej-jedrzejewski/SEBC/blob/master/installation/png/host_inspector.png)
 
