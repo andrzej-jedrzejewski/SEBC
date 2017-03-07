@@ -51,8 +51,22 @@
 4. Disabling Transparent Hugepage Compaction
 
   ```
-  echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
-  echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
+    if [ -f /sys/kernel/mm/redhat_transparent_hugepage/defrag ];
+  then
+    echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag
+    echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/defrag' >> /etc/rc.local
+  else
+    echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
+    echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
+  fi
+  if [ -f /sys/kernel/mm/redhat_transparent_hugepage/enabled ];
+  then
+    echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled
+    echo 'echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled' >> /etc/rc.local
+  else
+    echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
+    echo 'echo "never" > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
+  fi
   ```
   To verify on each host:
   ```
