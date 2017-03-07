@@ -46,8 +46,10 @@
   cm_processes on /run/cloudera-scm-agent/process type tmpfs (rw,relatime,seclabel,mode=751)
   ```
 
-3. There is only one physical/logical volume (root )
-
+3. Show the reserve space of any non-root, ext-based volumes: 
+  ```
+    There is only one physical/logical volume (root) - Saving my $$$ :)
+  ```
 4. Disabling Transparent Hugepage Compaction
 
   ```
