@@ -133,4 +133,11 @@
     FSCK ended at Tue Mar 07 11:16:34 UTC 2017 in 1 milliseconds
 
     The filesystem under path '/data/gerardovazquez/gerardovazquez/part-m-00000' is HEALTHY
-    ``` 
+    ```
+
+    2. The same was done with replication scheduler in CM:
+    ![replication](https://github.com/andrzej-jedrzejewski/SEBC/blob/master/storage/png/replication.png)
+
+    To resolve problem with privete ip resolution we have to enable following option:
+
+    ![datanode_hostname_resolution](https://github.com/andrzej-jedrzejewski/SEBC/blob/master/storage/png/datanode_hostname.png)
