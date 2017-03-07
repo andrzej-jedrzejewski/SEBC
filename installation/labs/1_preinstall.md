@@ -59,7 +59,27 @@
   [root@ip-10-0-0-206 ec2-user]# cat /sys/kernel/mm/transparent_hugepage/defrag
   always madvise [never]
   ```
-5. List your network interface configuration???
+5. List your network interface configuration
+    ```
+    [root@ip-10-0-0-206 ec2-user]# ifconfig
+        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.0.0.206  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 fe80::8b:9ff:fe53:32cd  prefixlen 64  scopeid 0x20<link>
+        ether 02:8b:09:53:32:cd  txqueuelen 1000  (Ethernet)
+        RX packets 2907687  bytes 3176397396 (2.9 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2848257  bytes 3562950523 (3.3 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+        lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 2600057  bytes 4659527583 (4.3 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2600057  bytes 4659527583 (4.3 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ``
 
 6. a) Forward DNS lookup
       ```
@@ -101,6 +121,6 @@
            └─18306 /usr/sbin/ntpd -u ntp:ntp -g
    ```
 
-9. Host inspector screen shot:
+9. Host inspector screenshot:
    ![AWS Nodes](https://github.com/andrzej-jedrzejewski/SEBC/blob/master/installation/png/host_inspector.png)
 
