@@ -1,9 +1,12 @@
 1. Report the latest available version of the API
+
     ```json
     curl -X GET -u andrzej-jedrzejewski:cloudera 'http://localhost:7180/api/version'
     v14
     ```
+
 2. Report the CM version
+
     ```json
      curl -X GET -u andrzej-jedrzejewski:cloudera 'http://localhost:7180/api/v14/cm/version'
       {
@@ -14,7 +17,9 @@
         "snapshot" : false
       }
     ```
+
 3. List all CM users
+
     ```json
       curl -X GET -u andrzej-jedrzejewski:cloudera 'http://localhost:7180/api/v14/users'
     {
@@ -29,7 +34,9 @@
         "roles" : [ "ROLE_CONFIGURATOR" ]
       } ]
     ```
+
 4. Report the database server in use by CM
+
     ```json
       curl -X GET -u andrzej-jedrzejewski:cloudera 'http://localhost:7180/api/v14/cm/scmDbInfo'
     {
