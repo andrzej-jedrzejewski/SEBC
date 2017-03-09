@@ -6,3 +6,6 @@ Change in in YARNCalcs:
 
 The Workload factor depends on worker's CPU and HDD.
 
+- yarn.nodemanager.resource.memory-mb is a total amount of physical memory for containers on WN.
+It should be = RAM – (RAM for OS + hadoop daemons + other services)
+
