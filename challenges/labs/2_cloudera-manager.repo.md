@@ -1,3 +1,5 @@
+1. Install CM - I use RHEL 7.3 so I chose the CM 5.10 
+
 ```
 [root@ip-10-0-0-111 yum.repos.d]# cat cloudera-manager.repo
 [cloudera-manager]
