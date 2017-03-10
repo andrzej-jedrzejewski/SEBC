@@ -4,4 +4,4 @@ Looking for next class with Michael :)
 
 My conclusions: I have to work on resource management and performance optimization.
 
-Thansk Michael!!!
+Thanks Michael!!!
